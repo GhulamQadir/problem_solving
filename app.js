@@ -2,18 +2,17 @@
 const calcFactorial = () => {
     let inputNum = Number(prompt("Enter the factorial number"))
     let factorial = inputNum;
-    while (inputNum > 1) {
-        factorial = factorial * (inputNum - 1)
-        inputNum--;
-    }
     if (inputNum < 0) {
-        console.log("Please enter positive number")
-    } else if (inputNum === 0) {
-        factorial = 1
-        console.log(factorial)
-    }
-    else {
-        console.log(factorial)
+        console.log("Please enter a positive number")
+    } else {
+        while (inputNum > 1) {
+            factorial = factorial * (inputNum - 1)
+            inputNum--;
+        }
+        if (inputNum === 0) {
+            factorial = 1
+        }
+        console.log(`Factorial of a given number is: ${factorial}`)
     }
 }
 // calcFactorial()
@@ -101,3 +100,45 @@ const commonDivisors = () => {
     }
 }
 // commonDivisors()
+
+
+
+// to find total population and average 
+const findPopAndAverage = () => {
+    const populationArr = [300, 50, 3, 8, 0, 1004];
+    let i = 0;
+    let totalPop = 0;
+    let totalNoOfInputs = 0
+    const lengthOfPopArr = populationArr.length;
+    while (i <= lengthOfPopArr - 1) {
+        totalPop += populationArr[i]
+        if (populationArr[i] > 0) {
+            totalNoOfInputs++;
+        }
+        i++;
+        console.log(totalPop)
+    }
+    console.log(`Total population is: ${totalPop}`)
+
+    const averagePop = totalPop / totalNoOfInputs
+    console.log(`Average population is: ${averagePop}`)
+}
+// findPopAndAverage()
+
+
+// find LCM (least common multiple) of two given numbers;
+const findLCM = () => {
+    const num1 = Number(prompt("Enter first number"))
+    const num2 = Number(prompt("Enter second number"))
+    let biggerNum = 0;
+    if (num1 >= num2) {
+        biggerNum = num1;
+    }
+    else {
+        biggerNum = num2
+    }
+
+    if (num1 > 0 && num2 > 0) {
+
+    }
+}
