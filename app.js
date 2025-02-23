@@ -131,14 +131,60 @@ const findLCM = () => {
     const num1 = Number(prompt("Enter first number"))
     const num2 = Number(prompt("Enter second number"))
     let biggerNum = 0;
+    let lcm = 0;
     if (num1 >= num2) {
         biggerNum = num1;
     }
     else {
         biggerNum = num2
     }
+    let checkingNum = biggerNum
 
     if (num1 > 0 && num2 > 0) {
+        while (lcm !== checkingNum) {
 
+            if (checkingNum % num1 === 0 && checkingNum % num2 === 0) {
+                lcm = checkingNum
+            }
+            else {
+                checkingNum++
+            }
+        }
+        console.log(`LCM of given numbers is: ${lcm}`)
+    }
+    else {
+        console.log("Numbers should be greater than 0")
     }
 }
+// findLCM()
+
+
+// utilize gift voucher
+const giftVoucher = (amount) => {
+    const voucherAmount = amount;
+    let purchaseAmount = 0;
+
+    while (purchaseAmount < voucherAmount) {
+        const productAmount = Number(prompt("Enter the amount of product"))
+        purchaseAmount += productAmount
+    }
+    if (purchaseAmount > voucherAmount) {
+        console.log(`Purchase Amount: ${purchaseAmount}\nYour total amount is greater than gift voucher amount`)
+    }
+    else {
+        console.log("You have utilized your voucher")
+    }
+}
+// giftVoucher(200)
+
+
+
+// total amount after discount
+const discountedPrice = () => {
+    const sellingPrice = Number(prompt("Enter the selling price"))
+    const discountedPercentage = Number(prompt("Enter the discounted percentage"))
+    const discountedAmount = sellingPrice * (discountedPercentage / 100)
+    const discountedPrice = sellingPrice - discountedAmount
+    console.log(`Your amount after discount is ${discountedPrice}`)
+}
+discountedPrice()
