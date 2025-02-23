@@ -187,4 +187,44 @@ const discountedPrice = () => {
     const discountedPrice = sellingPrice - discountedAmount
     console.log(`Your amount after discount is ${discountedPrice}`)
 }
-discountedPrice()
+// discountedPrice()
+
+
+// find lcm and hcf both
+const calcGcdAndLcm = () => {
+    const num1 = Number(prompt("Enter first number"))
+    const num2 = Number(prompt("Enter second number"))
+    let biggerNum = 0;
+    if (num1 >= num2) {
+        biggerNum = num1;
+    }
+    else {
+        biggerNum = num2
+    }
+    let checkGcdNum = biggerNum;
+    let hcf = 1;
+
+    let lcm = 1;
+    let checkLcmNum = biggerNum;
+    if (num1 > 0 && num2 > 0) {
+        while (hcf !== checkGcdNum || lcm !== checkLcmNum) {
+            if (num1 % checkGcdNum === 0 && num2 % checkGcdNum === 0) {
+                hcf = checkGcdNum
+                if (checkLcmNum % num1 === 0 && checkLcmNum % num2 === 0) {
+                    lcm = checkLcmNum;
+                }
+                else {
+                    checkLcmNum++
+                }
+            }
+            else {
+                checkGcdNum--;
+            }
+        }
+        console.log(`Greatest common divisor of two given numbers is ${hcf} and LCM is ${lcm}`)
+    } else {
+        console.log("Numbers should not be less than 1")
+    }
+}
+calcGcdAndLcm()
+
