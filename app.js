@@ -226,5 +226,31 @@ const calcGcdAndLcm = () => {
         console.log("Numbers should not be less than 1")
     }
 }
-calcGcdAndLcm()
+// calcGcdAndLcm()
 
+
+// take the month and date as input and print day of the week (only for 2025) 
+// "first january 2025 was on Wednesday"
+const printDayOfTheWeek = () => {
+    const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    const weekDays = ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday"]
+    const inputMonth = Number(prompt("Enter number of the month\n(Example, for March, enter 3 because it is the third month of the year)"))
+    const inputDateOfTheMonth = Number(prompt("Enter date of the month\n(Like this: 27)"))
+
+    let i = 0
+    let totalDays = 0
+    if (inputMonth > 12 || inputDateOfTheMonth > daysInMonth[inputMonth - 1] || inputDateOfTheMonth < 1 || inputMonth < 1) {
+        console.log("Incorrect number of days or month")
+    }
+    else {
+        while (i < (inputMonth - 1)) {
+            totalDays += daysInMonth[i];
+            i++;
+        }
+        totalDays += inputDateOfTheMonth
+        const weekDayNum = totalDays % 7
+        const getDayOfTheWeek = weekDays[weekDayNum - 1]
+        console.log(`Day of the week is ${getDayOfTheWeek}`)
+    }
+}
+printDayOfTheWeek()
