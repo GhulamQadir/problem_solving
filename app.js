@@ -17,6 +17,8 @@ const calcFactorial = () => {
 };
 // calcFactorial()
 
+
+
 // to find greatest common divisor(GCD) or HCF
 const calcGcd = () => {
   const num1 = Number(prompt("Enter first number"));
@@ -44,6 +46,8 @@ const calcGcd = () => {
 };
 // calcGcd()
 
+
+
 // to print divisors of a given number
 const calcDivisors = () => {
   const divisorsArray = [];
@@ -64,6 +68,8 @@ const calcDivisors = () => {
   }
 };
 // calcDivisors()
+
+
 
 // to print common divisors of two given numbers
 const commonDivisors = () => {
@@ -95,6 +101,8 @@ const commonDivisors = () => {
 };
 // commonDivisors()
 
+
+
 // to find total population and average
 const findPopAndAverage = () => {
   const populationArr = [300, 50, 3, 8, 0, 1004];
@@ -116,6 +124,8 @@ const findPopAndAverage = () => {
   console.log(`Average population is: ${averagePop}`);
 };
 // findPopAndAverage()
+
+
 
 // find LCM (least common multiple) of two given numbers;
 const findLCM = () => {
@@ -145,6 +155,8 @@ const findLCM = () => {
 };
 // findLCM()
 
+
+
 // utilize gift voucher
 const giftVoucher = (amount) => {
   const voucherAmount = amount;
@@ -164,6 +176,8 @@ const giftVoucher = (amount) => {
 };
 // giftVoucher(200)
 
+
+
 // total amount after discount
 const discountedPrice = () => {
   const sellingPrice = Number(prompt("Enter the selling price"));
@@ -175,6 +189,8 @@ const discountedPrice = () => {
   console.log(`Your amount after discount is ${discountedPrice}`);
 };
 // discountedPrice()
+
+
 
 // find lcm and hcf both
 const calcGcdAndLcm = () => {
@@ -212,6 +228,8 @@ const calcGcdAndLcm = () => {
   }
 };
 // calcGcdAndLcm()
+
+
 
 // take the month and date as input and print day of the week (only for 2025)
 // "first january 2025 was on Wednesday"
@@ -271,8 +289,7 @@ const splitSentence = () => {
         console.log(word);
         word = "";
       }
-    }
-    else {
+    } else {
       word += sentence[index];
       if (index === sentenceLength - 1) {
         console.log(word);
@@ -281,4 +298,29 @@ const splitSentence = () => {
     index++;
   }
 };
-splitSentence();
+// splitSentence();
+
+
+
+// input one digit as string and print its twice(don't use integer conversion functions)
+const twiceOfDigitAsChar = () => {
+  const char = prompt("Enter any integral character");
+  if (char !== "") {
+    const charCode = char.charCodeAt(0);
+    const twiceOfChar = (charCode - 48) * 2;
+    console.log(`The twice of given character is ${twiceOfChar}`);
+  }
+};
+// twiceOfDigitAsChar()
+
+
+
+// take one alphabet as input in uppercase and print its lowercase letter
+const printCapitalLetter = () => {
+  const alphabet = prompt("Enter any alphabet in uppercase");
+  const getChar = alphabet.charCodeAt(0);
+  const newCode =getChar+32
+  const lowerCaseAlphabet = String.fromCharCode(newCode);
+  console.log(`Lowercase of given character is: ${lowerCaseAlphabet}`);
+};
+printCapitalLetter();
