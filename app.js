@@ -314,13 +314,34 @@ const twiceOfDigitAsChar = () => {
 // twiceOfDigitAsChar()
 
 
+// take input as integer number as string and print sum of all digits like("2030" = 2+0+3+0)
+const sumOfIntegersAsString = () => {
+  const string = prompt("Enter integer digits as string")
+  const stringLength = string.length;
+  let i = 0;
+  let sumOfDigits = 0;
+  if (string.length) {
+    while (i < stringLength) {
+      const charCode = string.charCodeAt(i)
+      let charVal = charCode - 48
+      sumOfDigits += charVal
+      i++;
+    }
+    console.log(`Sum of digits is: ${sumOfDigits}`)
+  } else {
+    console.log("Enter digits")
+  }
+}
+sumOfIntegersAsString()
+
+
 
 // take one alphabet as input in uppercase and print its lowercase letter
 const printCapitalLetter = () => {
   const alphabet = prompt("Enter any alphabet in uppercase");
   const getChar = alphabet.charCodeAt(0);
-  const newCode =getChar+32
+  const newCode = getChar + 32
   const lowerCaseAlphabet = String.fromCharCode(newCode);
   console.log(`Lowercase of given character is: ${lowerCaseAlphabet}`);
 };
-printCapitalLetter();
+// printCapitalLetter();
